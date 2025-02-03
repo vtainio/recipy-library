@@ -1,7 +1,7 @@
-nextjs-netlify
+Recipy library
 ======================
 
-Free [Netlify](https://www.netlify.com/) quickstart recipe libary app using [Next.js](https://nextjs.org/), [Prisma](https://www.prisma.io/) and [Aiven](https://aiven.io). Recipe data is from [kaggle](https://www.kaggle.com/datasets/thedevastator/better-recipes-for-a-better-life).
+Free quickstart recipe libary app using [Next.js](https://nextjs.org/), [Prisma](https://www.prisma.io/) and [Aiven](https://aiven.io). Recipe data is from [kaggle](https://www.kaggle.com/datasets/thedevastator/better-recipes-for-a-better-life).
 
 About the app
 ========
@@ -10,20 +10,12 @@ The application is a recipe library where you can browse and inspect recipes. Ad
 
 PostgreSQL® is used as the data storage for storing all recipes and whether they are liked or not. Aiven for Caching is optional, but when configured statistics are cached to offer faster response time. The database response times are shown in the app to demonstrate the difference. You can get free services with Aiven for PostgreSQL and Aiven for Caching by [signing up](https://console.aiven.io/signup).
 
-The application is designed to be hosted on serverless application platform Netlify, which has amazing support for hosting Next.js applications.
-
 Getting started
 ============
 
-The app requires a PostgreSQL database. Configuring Aiven for Caching is optional, but highly recommended to demonstrate all features of the application and the benefits of having Caching as part of your application. Using `us-east-1` region is recommended to minimise latency, as this region will be closest to where the Netlify functions are deployed if using their free plan.
+The app requires a PostgreSQL database. Configuring Aiven for Caching is optional, but highly recommended to demonstrate all features of the application and the benefits of having Caching as part of your application.
 
 Get free Aiven for PostgreSQL and Aiven for Caching from [Aiven](https://console.aiven.io/singup).
-
-## Fork and deploy to Netlify
-
-You can fork this branch and deploy the application immediately to Netlify by clicking the button below. Database migration and seed is done during the Netlify deployment process. Make sure you have your PostgreSQL database up and running when deploying to achieve a working environment on the first try.
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Aiven-Labs/nextjs-netlify)
 
 ## Development setup
 
@@ -43,31 +35,10 @@ Congratulations you can now start developing. The page reloads automatically as 
 - Run eslint: `npm run eslint`
 - Run prettier format: `npm run format`
 
-
-Netlify deployment
-============
-
-You can fork this branch and deploy the application immediately to Netlify by clicking the button below. Database migrations and seed is done during the Netlify deployment process. Make sure you have PostgreSQL database up and running when deploying to achieve a working environment on the first try.
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Aiven-Labs/nextjs-netlify)
-
-## Setup automatic deployment manually
-
-1. Install packages: `npm ci`
-1. Login with the cli to obtain token: `npx netlify login`
-1. Start and follow the automated setup process: `npx netlify init`
-
-    Choose to create a new site, and then select the default options other prompts. You will be required to authorize Netlify with GitHub.
-
-1. Open site admin UI in Netlify: `npx netlify open --admin`
-1. Go to site configuration section and add environment variables for PostgreSQL and Aiven for Caching. Check [.env.template](.env.template) for the keys.
-1. Go to deploys section and trigger the deployment by clicking `Trigger deploy` -button.
-1. Access the app from command line with `npx netlify open --site` or open the site from the Netlify admin UI.
-
-You can now push changes and your changes will be automatically deployed to your site.
-
 Licenses
 ============
+Project is originated from [nextjs-netlify](https://github.com/Aiven-Labs/nextjs-netlify).
+
 nextjs-netlify is licensed under the Apache license, version 2.0. Full license text is available in the [LICENSE](LICENSE) file.
 Please note that the project explicitly does not require a CLA (Contributor
 License Agreement) from its contributors.
@@ -75,7 +46,3 @@ License Agreement) from its contributors.
 PostgreSQL is a trademark or registered trademark of the PostgreSQL Community Association of Canada, and used with their permission.
 *Redis is a registered trademark of Redis Ltd. Any rights therein are reserved to Redis Ltd. 
 Any use by Aiven is for referential purposes only and does not indicate any sponsorship, endorsement or affiliation between Redis and Aiven.  All product and service names used in this website are for identification purposes only and do not imply endorsement.
-
-Contact
-============
-Bug reports and patches are very welcome, please post them as GitHub issues and pull requests at https://github.com/Aiven-Labs/nextjs-netlify.
