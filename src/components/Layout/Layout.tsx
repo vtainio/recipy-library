@@ -13,10 +13,7 @@ export const Layout: React.FC<{ children: ReactNode }> = ({ children }) => {
     <>
       <Head>
         <title>Recipe library powered by Aiven</title>
-        <meta
-          name="description"
-          content="Recipe library built with Next.js, PostgreSQL, Aiven for Caching"
-        />
+        <meta name="description" content="Recipe library built with Next.js, PostgreSQL, Aiven for Caching" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

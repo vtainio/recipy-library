@@ -3,7 +3,6 @@ import Image from 'next/image';
 
 import styles from './styles.module.css';
 
-
 export const Navbar: React.FC = () => {
   return (
     <nav className={styles.navbar}>

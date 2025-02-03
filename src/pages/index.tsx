@@ -1,12 +1,11 @@
-import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
-
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const { push } = useRouter();
   useEffect(() => {
-    push('/recipes')
+    push('/recipes');
   }, []);
 
-  return <div></div>
+  return <div></div>;
 }
