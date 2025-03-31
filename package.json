@@ -1,11 +1,11 @@
 {
-  "name": "recipy-library",
+  "name": "aiven-nextjs-netlify",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "prisma generate && next dev",
     "build": "prisma generate && next build",
-    "build-and-seed": "prisma generate && next build && prisma migrate deploy && prisma db seed",
+    "build-netlify": "prisma generate && next build && prisma migrate deploy && prisma db seed",
     "seed": "prisma db seed",
     "reset-db": "prisma migrate reset --force",
     "start": "next start",
@@ -38,6 +38,7 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "netlify-cli": "^17.33.3",
     "prisma": "^4.16.2",
     "ts-node": "^10.9.1"
   }
