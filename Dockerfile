@@ -1,25 +1,26 @@
-FROM node:18-alpine AS base
+# Base image
+FROM node:18-alpine
 
-FROM base AS deps
+# Set working directory
 WORKDIR /app
+
+# Copy package.json and package-lock.json (if available)
 COPY package*.json ./
+
+# Install dependencies
 RUN npm install
 
-FROM base AS builder
-WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
+# Copy the rest of the application files to the container
 COPY . .
-RUN npm run build
 
-FROM base AS runner
-WORKDIR /app
+# Install openssl
 RUN apk add --no-cache openssl
-COPY --from=builder /app/.next/standalone ./
-COPY --from=builder /app/.next/static ./.next/static
-COPY --from=builder /app/public ./public
+
+# Build the Next.js application
+RUN npm run build
 
 # Expose the port the app runs on
 EXPOSE 3000
 
 # Set the command to run the application
-CMD ["node", "server.js"]
+CMD ["npm", "start"]
